@@ -78,6 +78,7 @@ class window(QWidget):
         #Ajudsta os radio buttons conforme clickados selecionados
         self.box_regiao.clicked.connect(lambda : self.data_box.setInputMask(""))
         self.box_regiao.clicked.connect(lambda : self.data_box.setMaxLength(2))
+        self.data_box.textChanged.connect(lambda : self.data_box.setText(self.data_box.text().upper()) if self.box_regiao.isChecked() else self.data_box.setText(self.data_box.text()))
         self.box_regiao.clicked.connect(self.data_box.setFocus)
         self.box_name.clicked.connect(lambda: self.data_box.setInputMask(""))
         self.box_name.clicked.connect(lambda : self.data_box.setMaxLength(100))
